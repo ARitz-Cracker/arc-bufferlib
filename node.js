@@ -28,10 +28,16 @@ exports.stringToHex = function(str,append0x){
 	return (append0x === false ? "":"0x")+Buffer.from(str,"utf8").toString("hex");
 }
 
-exports.newBuffer = Buffer.alloc;
+exports.alloc = Buffer.alloc;
 
-exports.newBufferUnsafe = Buffer.allocUnsafe;
+exports.allocUnsafe = Buffer.allocUnsafe;
+
+exports.newBuffer = exports.alloc;
+
+exports.newBufferUnsafe = exports.allocUnsafe;
 
 exports.concat = Buffer.concat;
 
 exports.from = Buffer.from;
+
+exports.allocRandom = require("crypto").randomBytes;

@@ -105,13 +105,17 @@ exports.stringToHex = function(str,append0x){
 	return hex;
 }
 
-exports.newBuffer = function(len){
+exports.alloc = function(len){
 	return new Uint8Array(len);
 }
 
-exports.newBufferUnsafe = function(len){
+exports.allocUnsafe = function(len){
 	return new Uint8Array(len);
 }
+
+exports.newBuffer = exports.alloc;
+
+exports.newBufferUnsafe = exports.allocUnsafe;
 
 exports.from = function(stuff){
 	return new Uint8Array(stuff);
@@ -134,4 +138,10 @@ exports.concat = function(buffers, len){
 		currentIndex += buffers[i].length;
 	}
 	return result;
+}
+
+exports.allocRandom = function(len){
+	let bytes = new Uint8Array(len);
+	crypto.getRandomValues(bytes);
+	return bytes;
 }
