@@ -14,14 +14,14 @@ exports.hexToBuffer = function(hex,appended0x){
 
 exports.bufferToString = function(buff){
 	if (!Buffer.isBuffer(buff)){ // In case we're past a Uint8Array
-		buff = buffer.from(buff);
+		buff = Buffer.from(buff);
 	}
 	return buff.toString("utf8");
 }
 
 exports.bufferToHex = function(buff,append0x){
 	if (!Buffer.isBuffer(buff)){ // In case we're past a Uint8Array
-		buff = buffer.from(buff);
+		buff = Buffer.from(buff);
 	}
 	return (append0x === false ? "":"0x")+buff.toString("hex");
 }
