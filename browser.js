@@ -109,9 +109,9 @@ exports.alloc = function(len){
 	return new Uint8Array(len);
 }
 
-exports.allocUnsafe = function(len){
-	return new Uint8Array(len);
-}
+exports.allocUnsafe = exports.alloc;
+
+exports.allocUnsafeSlow = exports.alloc;
 
 exports.newBuffer = exports.alloc;
 

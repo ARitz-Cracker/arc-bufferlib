@@ -38,6 +38,8 @@ exports.alloc = Buffer.alloc;
 
 exports.allocUnsafe = Buffer.allocUnsafe;
 
+exports.allocUnsafeSlow = Buffer.allocUnsafeSlow;
+
 exports.newBuffer = exports.alloc;
 
 exports.newBufferUnsafe = exports.allocUnsafe;
