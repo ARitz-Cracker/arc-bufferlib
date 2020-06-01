@@ -134,7 +134,7 @@ exports.concat = function(buffers, len){
 	let result = new Uint8Array(len);
 	let currentIndex = 0
 	for (let i=0; i<buffers.length; i+=1){
-		result.set(buffers[i].length, currentIndex);
+		result.set(buffers[i], currentIndex);
 		currentIndex += buffers[i].length;
 	}
 	return result;
